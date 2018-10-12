@@ -1,4 +1,4 @@
-import { API_URL } from '../config';
+import { REACT_APP_API_BASE_URL } from '../config';
 
 export const FETCH_CHEESES_REQUEST = 'FETCH_CHEESES_REQUEST';
 export const fetchCheesesRequest = () => ({
@@ -19,7 +19,7 @@ export const fetchCheesesError = error => ({
 
 export const fetchCheeses = () => dispatch => {
   dispatch(fetchCheesesRequest());
-  return fetch(`${API_URL}/api/cheese`, {
+  return fetch(`${REACT_APP_API_BASE_URL}/api/cheese`, {
     method: 'GET'
   })
     .then(res => res.json())
